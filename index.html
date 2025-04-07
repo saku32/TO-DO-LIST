@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('https://images.unsplash.com/photo-1730971191554-8298ec9fac9e?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+            background-repeat: no-repeat;
+            background-size: fit;
+            
+        }
+.parent{
+    height: 450px;
+    width: 450px;
+    border: 1px solid black;
+    border: none;
+    margin: auto;
+    background-color: greenyellow;
+    padding: 20px;
+    gap: 20px;
+    border-radius: 15px ;
+    position: relative;
+    background: rgba(98, 104, 89, 0.2); /* semi-transparent green */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px); /* for Safari */
+    
+}
+h1{
+    color: darkgoldenrod;
+}
+input{
+    margin-bottom: 10px;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    height: 20px;
+    width: 70%;
+}
+button{
+    background-color: beige;
+    border: none;
+    border-radius: 10px;
+    margin: 6px;
+    height: 25px;
+    width: 15%;
+    padding: 5px 10px;
+    background-color: aquamarine;
+}
+ .item{
+    display: flex;
+    height: 300px;
+    width: 90%;
+    border: 1px solid white;
+    border-radius: 10px;
+    position: absolute;
+    flex-direction: column;
+    
+}
+li{
+    text-transform: capitalize;
+    list-style: none;
+  color: beige;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 20px;
+  margin-top: 10px;
+  
+}
+.item button{
+    background-color:beige;
+    height: 30px;
+    width: 60px;
+}
+button:hover{
+    background-color: rgb(49, 51, 111);
+}
+    </style>
+</head>
+<body>
+    <center>
+    <div class="parent">
+        
+            <h1>To Do List</h1>
+<input type="text" id="in"> <br>      
+<button onclick="insert()">Insert</button>
+       <button onclick="location.reload()">Reset</button>
+
+<div class="item">
+
+</div>
+    </div>
+</center>
+    <script>
+
+
+
+        let input= document.querySelector("#in");
+function insert(){
+    if(input.value ==""){
+alert("enter some text");
+    }
+    else{
+        let newElement = document.createElement("li");
+             
+            newElement.innerHTML = `${input.value} <button>delete</button> `;
+            let container=document.querySelector(".item");
+            container.append(newElement);
+            input.value="";
+            newElement.querySelector("button").addEventListener("click",del)
+            function del() {
+                newElement.remove();
+            }
+           
+    }
+
+
+}
+
+
+
+    </script>
+</body>
+</html>
