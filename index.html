@@ -87,7 +87,7 @@ button:hover{
 <input type="text" id="in"> <br>      
 <button onclick="insert()">Insert</button>
        <button onclick="location.reload()">Reset</button>
-
+<button onclick="edit()">Edit Mode</button>
 <div class="item">
 
 </div>
@@ -118,6 +118,16 @@ alert("enter some text");
 
 
 }
+        function edit( ){
+    if(document.designMode=="off"){
+document.designMode="on";
+
+    }
+    else{
+        document.designMode="off";
+    }
+}
+
 
 
 
